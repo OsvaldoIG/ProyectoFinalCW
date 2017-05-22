@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8"/>
+     <title>Registro</title>
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="../resources/materialize/css/materialize.min.css"  media="screen,projection"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   </head>
+   <body>
+     <!--Barra de navegación-->
+     <nav>
+       <div class="nav-wrapper #283593 indigo darken-3">
+         <a href="PInicioUsu.html" class="brand-logo">Logo</a>
+         <ul class="right hide-on-med-and-down">
+           <li>Registro</li>
+         </ul>
+       </div>
+     </nav>
+     <br/><br/><br/>
+     <!--Formulario-->
+     <div class="row">
+       <form id="formu" class="col s12">
+         <div class="row">
+            <label>Nombre</label>
+		         <div class="input-field col s12">
+		             <i class="material-icons prefix">perm_identity</i>
+		             <input id="Nombre" type="text" maxlength="15" required>
+		             <label for="Nombre">Máximo 15 caracteres.Sin acentos</label>
+		         </div>
+             <div id="valnom">
+             </div>
+             <br/>
+             <label>Fecha de Nacimiento</label>
+		         <div class="input-field col s12">
+		             <i class="material-icons prefix">perm_contact_calendar</i>
+		             <input id="FNacimiento" type="date" required>
+		         </div>
+             <div id="valfnac">
+             </div>
+             <br/>
+             <label>Correo Electrónico</label>
+             <div class="input-field col s12">
+		             <i class="material-icons prefix">email</i>
+		             <input id="Correo" type="text" maxlength="40" required>
+		             <label for="Correo">Únicamente @gmail.com, @comunidad.unam.mx, @hotmail.com, @outlook.com, @outlook.es</label>
+		         </div>
+             <div id="valcorre">
+             </div>
+             <br/>
+             <label>Nombre de usuario</label>
+             <div class="input-field col s12">
+		             <i class="material-icons prefix">account_circle</i>
+		             <input id="Usu" type="text" maxlength="15" required>
+		             <label for="Usu">Mínimo 4,máximo 15 caracteres alfanuméricos (letras, dígitos y @/./+/-/_) solamente.</label>
+		         </div>
+             <div id="valusu">
+             </div>
+             <br/>
+             <label>Contraseña</label>
+             <div class="input-field col s12">
+		             <i class="material-icons prefix">vpn_key</i>
+		             <input id="Cont" type="password" maxlength="15" required>
+		             <label for="Cont">Mínimo de 8 caracteres,debe contener al menos un carácter numérico, uno especial (./_/@), una letra mayúscula y carecer de espacios.</label>
+		         </div>
+             <div id="valcont">
+             </div>
+        </div>
+        <br/><br/>
+        <div align="center">
+          <button class="btn waves-effect waves-light #283593 indigo darken-3" type="submit" name="action">Registrarse
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+        <br/><br/><br/>
+        <div id="valtodo" align="center">
+        </div>
+      </form>
+     </div>
+     <!--Scripts-->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="../resources/materialize/js/materialize.min.js"></script>
+     <script type="text/javascript" src="../programs/registroUsu.js"></script>
+   </body>
+ </html>
