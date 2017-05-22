@@ -24,6 +24,33 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `jsocial` /*!40100 DEFAULT CHARACTER SE
 USE `jsocial`;
 
 --
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `admin` (
+  `id_admin` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(15) DEFAULT NULL,
+  `correo` varchar(40) DEFAULT NULL,
+  `nombre_admin` varchar(15) DEFAULT NULL,
+  `fecha_nac` date DEFAULT NULL,
+  `contrasenia` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admin`
+--
+
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `juego`
 --
 
@@ -141,9 +168,8 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(15) DEFAULT NULL,
   `correo` varchar(40) DEFAULT NULL,
   `nombre_usu` varchar(15) DEFAULT NULL,
-  `contrasenia` varchar(15) DEFAULT NULL,
-  `tipo_usuario` char(1) DEFAULT NULL,
   `fecha_nac` date DEFAULT NULL,
+  `contrasenia` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -166,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-22 12:46:40
+-- Dump completed on 2017-05-22 15:57:46
