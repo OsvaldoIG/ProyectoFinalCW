@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `JSocial`
+-- Current Database: `jsocial`
 --
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `jsocial` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `JSocial`;
+USE `jsocial`;
 
 --
 -- Table structure for table `juego`
@@ -139,11 +139,11 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id_usuario` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(15) DEFAULT NULL,
-  `fecha_nac` datetime DEFAULT NULL,
   `correo` varchar(40) DEFAULT NULL,
   `nombre_usu` varchar(15) DEFAULT NULL,
   `contrasenia` varchar(15) DEFAULT NULL,
   `tipo_usuario` char(1) DEFAULT NULL,
+  `fecha_nac` date DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -166,4 +166,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-22  9:26:49
+-- Dump completed on 2017-05-22 12:46:40
