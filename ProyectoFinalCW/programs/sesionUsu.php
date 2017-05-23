@@ -1,42 +1,61 @@
 <?php
-  $usu=$_POST['usuario'];
-  $cont=$_POST['contra'];
-          $conn=mysqli_connect('localhost','root','','jsocial');
-          if($conn)
-			    {
-    					$verificar_usuario = mysqli_query($conn,"SELECT * FROM usuarios WHERE nombre_usu = '".$usu."';");
-    					$numUsu=mysqli_num_rows($verificar_usuario);
-    					if($numUsu==1)
-    					{
-    						$verificar_contra = mysqli_query($conn,"SELECT * FROM usuarios WHERE contrasenia = '".$cont."';");
-    						$numCon=mysqli_num_rows($verificar_contra);
-    						if($numCon==1)
-    						{
-                  echo "BIENVENIDO";
-                  /*$query1='SELECT * FROM usuario';
-          				$res1=mysqli_query($conn,$query1);
-          				$fila1=mysqli_fetch_assoc($res1);
-                  $x=0;
-                  while($fila1)
-          				{
-          					$nusuario[$x]=$fila['nombre_usuario'];
-                    $x++;
-                    $fila1=mysqli_fetch_assoc($res1);
-          				}*/
-    						}
-    						else
-    						{
-
-                  echo "La contraseña no es correcta";
-    						}
-    					}
-              if($numUsu==0)
-              {
-                echo "El usuario no está registrado";
-              }
-          }
-			    else
-          {
-              echo "Error al conectar con la base de datos";
-          }
+  //Funcion sal y pimienta de la contraseña
+  function firma($contr)
+  {
+    $con=strrev($contr);
+    $f="oujegsl".$con."woiafpe";
+    return $f;
+  }
+  //Registro
+  //Conexión con la base de datos
+  $conn=mysqli_connect('localhost','root','','jsocial');
+  if($conn)
+	{
+    //Evitar inyecciones SQL
+    $usu= mysqli_real_escape_string($conn, $_POST['usuario']);
+    $contra= mysqli_real_escape_string($conn, $_POST['contra']);
+    //Expresiones Regulares
+  	$usuario="/^[A-z0-9_]{4,15}$/";
+  	$contrasenia="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@._])([A-Za-z0-9.@_]|[^ ]){8,15}$/";
+    //Validaciones
+  	$valusu=preg_match($usuario,$usu);
+  	$valcontra=preg_match($contrasenia,$contra);
+    //Validación y registro de datos
+    if($valusu==1 && $valcontra==1)
+    {
+      $cifcont=firma($contra);
+      $verificar_usuario = mysqli_query($conn,"SELECT * FROM usuarios WHERE nombre_usu = '".$usu."';");
+      $numUsu=mysqli_num_rows($verificar_usuario);
+			if($numUsu>0)
+			{
+        $verificar_contra = mysqli_query($conn,"SELECT * FROM usuarios WHERE contrasenia = '".$cifcont."';");
+				$numCon=mysqli_num_rows($verificar_contra);
+				if($numCon==1)
+        {
+          $arre[0]="BIENVENIDO";
+          echo json_encode($arre);
+        }
+        else
+        {
+          $arre[0]="La contraseña introducida no es correcta";
+          echo json_encode($arre);
+        }
+      }
+      else
+      {
+        $arre[0]="No existe el Usuario Introducido";
+        echo json_encode($arre);
+      }
+    }
+    else
+    {
+      $arre[0]="Contraseña o Nombre de Usuario no válid@(s)";
+      echo json_encode($arre);
+    }
+  }
+  else
+  {
+    $arre[0]="Error al conectar con la base de datos";
+    echo json_encode($arre);
+  }
 ?>

@@ -6,7 +6,6 @@ $("#formu").on("submit",function(){
     var corre=$("#Correo").val();
     var usu=$("#Usu").val();
     var cont=$("#Cont").val();
-    console.log(fnac);
     //Expresiones Regulares
     var valnom= new RegExp("^[A-Z]{1}[a-z]{1,14}$");
     var valfnac= new RegExp("^[12]{1}[0-9]{3}-[01]{1}[0-9]{1}-[0123]{1}[0-9]{1}$");

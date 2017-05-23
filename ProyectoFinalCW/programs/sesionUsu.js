@@ -6,18 +6,43 @@ $("#formu").on("submit",function(){
     //Valor de los dos inputs
     var usu=$("#Usu").val();
     var cont=$("#Cont").val();
-    $.ajax({
-      url:"../programs/sesionUsu.php",
-      type:"POST",
-      dataType: "text",
-      data: {
-        usuario: usu,
-        contra: cont
-      },
-      success: function (resp){
-        val=resp;
-        console.log(val);
-        $("#validacion").html(resp);
-      }
-    });
-  });
+    //Expresiones Regulares
+    var valusu= new RegExp("^[A-z0-9_]{4,15}$");
+    var valcont= new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@._])([A-Za-z0-9.@_]|[^ ]){8,15}$");
+    //Validación
+    if(!valusu.test(usu))
+		{
+			$("#validacion").html("Nombre de Usuario Introducido No Válido").css({
+				"color":"red"
+				});
+    }
+    else {
+      $("#validacion").html(" ");
+    }
+    if(!valcont.test(cont))
+		{
+			$("#validacion").html("Contraseña Introducida No Válida").css({
+				"color":"red"
+				});
+    }
+    else {
+      $("#validacion").html(" ");
+    }
+    if(valusu.test(usu) && valcont.test(cont))
+    {
+      $.ajax({
+        url:"../programs/sesionUsu.php",
+        type:"POST",
+        dataType: "json",
+        data: {
+          usuario: usu,
+          contra: cont
+        },
+        success: function (resp){
+          val=resp;
+          console.log(val);
+          //$("#validacion").html(resp);
+        }
+      });
+    }
+});
