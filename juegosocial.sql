@@ -59,11 +59,25 @@ DROP TABLE IF EXISTS `juego`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `juego` (
   `id_usuarioret` int(10) DEFAULT NULL,
-  `tipo_juego` char(1) DEFAULT NULL,
   `id_usuarioopo` int(10) DEFAULT NULL,
+  `tipo_juego` char(1) DEFAULT NULL,
   `puntaje_ret` int(4) DEFAULT NULL,
   `puntaje_opo` int(4) DEFAULT NULL,
-  `num_partida` int(5) DEFAULT NULL
+  `num_partida` int(5) DEFAULT NULL,
+  `bar_ret5` char(14) DEFAULT NULL,
+  `bar_ret4` char(11) DEFAULT NULL,
+  `bar_ret3` char(8) DEFAULT NULL,
+  `bar_ret32` char(8) DEFAULT NULL,
+  `bar_ret2` char(5) DEFAULT NULL,
+  `bar_opo5` char(14) DEFAULT NULL,
+  `bar_opo4` char(11) DEFAULT NULL,
+  `bar_opo3` char(8) DEFAULT NULL,
+  `bar_opo32` char(8) DEFAULT NULL,
+  `bar_opo2` char(5) DEFAULT NULL,
+  `acierto_ret` char(50) DEFAULT NULL,
+  `fallas_ret` varchar(248) DEFAULT NULL,
+  `acierto_opo` char(50) DEFAULT NULL,
+  `fallas_opo` varchar(248) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
