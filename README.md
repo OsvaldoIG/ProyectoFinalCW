@@ -1,2 +1,0 @@
-# ProyectoFinalCW
-Videojuego Social 
