@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.parallax').parallax();
+    $("#animacion").hide();
   });
   $("#formu").on("submit",function(){
       event.preventDefault();
@@ -45,7 +46,11 @@ $(document).ready(function(){
       				});
             if(val[0]=="BIENVENIDO")
             {
+              $("#body").hide();
+              $("#animacion").show();
+              setInterval(function(){
                 window.location.href = "../templates/principalAdmin.html";
+              },3000);
             }
             //$("#validacion").html(resp);
           }

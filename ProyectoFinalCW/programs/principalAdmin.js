@@ -1,15 +1,12 @@
 $(document).ready(function(){
   $('.slider').slider();
   $.ajax({
-    url:"../programs/principalUsu.php",
+    url:"../programs/principalAdmin.php",
     type:"POST",
     dataType: "json",
-    /*data: {
-      admin: admin,
-      contra: cont
-    },*/
     success: function (resp){
-      $("#usuario").html(resp[3][1]);
+      console.log(resp[3][1]);
+      $("#admin").html(resp[3][1]);
     }
   });
 });

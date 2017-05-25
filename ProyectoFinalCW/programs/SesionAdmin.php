@@ -1,4 +1,5 @@
 <?php
+  session_start();
   //Funcion sal y pimienta de la contraseña
   function firma($contr)
   {
@@ -34,6 +35,30 @@
         {
           $arre[0]="BIENVENIDO";
           echo json_encode($arre);
+          //Saca los datos del administrador
+          $query="SELECT * FROM admin WHERE nombre_admin = '".$admin."';";
+				  $res=mysqli_query($conn,$query);
+				  $fila=mysqli_fetch_assoc($res);
+				  $x=1;
+				  while($fila)
+				  {
+  					$arreid[$x]=$fila['id_admin'];
+  					$arrenombre[$x]=$fila['nombre'];
+            $arrecorreo[$x]=$fila['correo'];
+            $arreusu[$x]=$fila['nombre_admin'];
+            $arrefnac[$x]=$fila['fecha_nac'];
+            $arrecont[$x]=$fila['contrasenia'];
+  					$x++;
+  					$fila=mysqli_fetch_assoc($res);
+				  }
+          $arreses[]=$arreid;
+          $arreses[]=$arrenombre;
+          $arreses[]=$arrecorreo;
+          $arreses[]=$arreusu;
+          $arreses[]=$arrefnac;
+          $arreses[]=$arrecont;
+          //Variable de Sesión
+          $_SESSION['admin']=$arreses;
         }
         else
         {
