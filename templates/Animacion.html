@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Animación</title>
+    <script type="text/javascript" src="../Resources/jquery.min.js"></script>
+  </head>
+  <body>
+      <div id="animacion" align="middle">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="700" height="700" id="svgimag">
+  	       <image xlink:href="../Resources/corre_1.png" x="170" y="50" width="400" id="corre"/>
+           <text x="350" y="600" font-family="Arial" font-size="50" navy text-anchor="middle">CARGANDO...</text>
+         </svg>
+      <script type="text/javascript">
+        var corre = 0;
+        $(document).ready(function(){
+            setInterval(function(){
+              corre++;
+              $("#corre").attr("xlink:href","../Resources/corre_"+((corre%27)+1)+".png");
+            },25);
+          });
+      </script>
+    </div>
+  </body>
+</html>
