@@ -115,7 +115,6 @@ CREATE TABLE `ranking` (
   `id_usuario` int(10) DEFAULT NULL,
   `puntaje_altind` int(4) DEFAULT NULL,
   `num_part` int(5) DEFAULT NULL,
-  `puntaje_altotros` int(4) DEFAULT NULL,
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `ranking_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
