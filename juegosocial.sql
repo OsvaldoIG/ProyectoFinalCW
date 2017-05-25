@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
   `fecha_nac` date DEFAULT NULL,
   `contrasenia` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,6 +51,52 @@ LOCK TABLES `admin` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `clave`
+--
+
+DROP TABLE IF EXISTS `clave`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clave` (
+  `clave` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clave`
+--
+
+LOCK TABLES `clave` WRITE;
+/*!40000 ALTER TABLE `clave` DISABLE KEYS */;
+INSERT INTO `clave` VALUES ('adminavaljuesol5');
+/*!40000 ALTER TABLE `clave` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `imagenes`
+--
+
+DROP TABLE IF EXISTS `imagenes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `imagenes` (
+  `id_imagen` int(30) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(10) NOT NULL,
+  `imagen` longblob,
+  PRIMARY KEY (`id_imagen`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `imagenes`
+--
+
+LOCK TABLES `imagenes` WRITE;
+/*!40000 ALTER TABLE `imagenes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `imagenes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `juego`
 --
 
@@ -59,11 +105,25 @@ DROP TABLE IF EXISTS `juego`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `juego` (
   `id_usuarioret` int(10) DEFAULT NULL,
-  `tipo_juego` char(1) DEFAULT NULL,
   `id_usuarioopo` int(10) DEFAULT NULL,
+  `tipo_juego` char(1) DEFAULT NULL,
   `puntaje_ret` int(4) DEFAULT NULL,
   `puntaje_opo` int(4) DEFAULT NULL,
-  `num_partida` int(5) DEFAULT NULL
+  `num_partida` int(5) DEFAULT NULL,
+  `bar_ret5` char(14) DEFAULT NULL,
+  `bar_ret4` char(11) DEFAULT NULL,
+  `bar_ret3` char(8) DEFAULT NULL,
+  `bar_ret32` char(8) DEFAULT NULL,
+  `bar_ret2` char(5) DEFAULT NULL,
+  `bar_opo5` char(14) DEFAULT NULL,
+  `bar_opo4` char(11) DEFAULT NULL,
+  `bar_opo3` char(8) DEFAULT NULL,
+  `bar_opo32` char(8) DEFAULT NULL,
+  `bar_opo2` char(5) DEFAULT NULL,
+  `acierto_ret` char(50) DEFAULT NULL,
+  `fallas_ret` varchar(248) DEFAULT NULL,
+  `acierto_opo` char(50) DEFAULT NULL,
+  `fallas_opo` varchar(248) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -171,7 +231,7 @@ CREATE TABLE `usuarios` (
   `fecha_nac` date DEFAULT NULL,
   `contrasenia` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,4 +252,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-22 15:57:46
+-- Dump completed on 2017-05-23 22:18:30
