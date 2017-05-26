@@ -127,7 +127,6 @@ CREATE TABLE `juego` (
   `tipo_juego` char(1) DEFAULT NULL,
   `puntaje_ret` int(4) DEFAULT NULL,
   `puntaje_opo` int(4) DEFAULT NULL,
-  `num_partida` int(5) DEFAULT NULL,
   `bar_ret5` char(14) DEFAULT NULL,
   `bar_ret4` char(11) DEFAULT NULL,
   `bar_ret3` char(8) DEFAULT NULL,
