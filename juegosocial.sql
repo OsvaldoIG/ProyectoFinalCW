@@ -399,6 +399,8 @@ DROP TABLE IF EXISTS `ranglobal`;
 CREATE TABLE `ranglobal` (
   `id_usuario` int(10) NOT NULL,
   `puntaje_altind` int(5) DEFAULT NULL,
+  `puntaje_altcom` int(5) DEFAULT NULL,
+  `partidas_max` int(5) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
