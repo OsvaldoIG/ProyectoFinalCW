@@ -370,7 +370,7 @@ DROP TABLE IF EXISTS `publicaciones`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publicaciones` (
   `id_usuario` int(10) DEFAULT NULL,
-  `id_publicacion` int(15) NOT NULL AUTO_INCREMENT,
+  `id_publicacion` varchar(15) NOT NULL AUTO_INCREMENT,
   `text_publicacion` varchar(500) DEFAULT NULL,
   `fecha_publicacion` datetime DEFAULT NULL,
   `tipo_publicacion` char(1) DEFAULT NULL,
@@ -424,6 +424,7 @@ DROP TABLE IF EXISTS `ranking`;
 CREATE TABLE `ranking` (
   `id_usuario` int(10) DEFAULT NULL,
   `puntaje_altind` int(4) DEFAULT NULL,
+  `puntaje_altcom` int(4) DEFAULT NULL,
   `num_part` int(5) DEFAULT NULL,
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `ranking_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
