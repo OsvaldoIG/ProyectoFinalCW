@@ -1,0 +1,10 @@
+.mar
+{
+	font-size:36px;
+	color:white;
+	background-color:blue;
+	background-image:url('../resources/images/marJue.jpg');
+	background-size: cover;
+	width:45px; 
+	height:45px;
+}
