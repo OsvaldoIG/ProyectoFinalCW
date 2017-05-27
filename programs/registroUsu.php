@@ -13,7 +13,6 @@
 	{
     //Evitar inyecciones SQL
     $nom= mysqli_real_escape_string($conn, $_POST['nombre']);
-	echo $nom;
     $naci= mysqli_real_escape_string($conn, $_POST['fecha']);
     $corre= mysqli_real_escape_string($conn, $_POST['correo']);
     $usu= mysqli_real_escape_string($conn, $_POST['usuario']);
@@ -50,7 +49,7 @@
 				}
         else
         {
-          echo "REGISTRO EXITOSO!!".$corre;
+          echo "REGISTRO EXITOSO!!";
         }
       }
     }

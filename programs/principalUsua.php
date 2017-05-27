@@ -109,16 +109,101 @@
        </div>
      </div>
      <!--Publicaciones-->
-     <div>
+     <div class="container">
+	 <div class="row">
+       <form id="formpu" action="../programs/pub.php" method="post">
+		<p style='font:150% sans-serif'>Subir Publicación</p>
+		<input type='text' name='publi' id='public' placeholder='Publica'/>
+		<div align="center">
+          <button class="btn waves-effect waves-light #283593 indigo darken-3" type="submit" name="action">Publicar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+	</form>
+	<br/>
+	
+			<?php
+	  echo"<div class='container'>
+			<div class='row'>	
+			<div class='col s12 m12 l12 xl12>
+			<a name='inicio'></a>
+			</html>";
+	 $con=mysqli_connect("localhost","root","","jsocial");
+	$query="SELECT * FROM publicaciones;";
+		$res=mysqli_query($con,$query);
+		$fila=mysqli_fetch_assoc($res);
+		$id=0;
+		$us2=array("0"=>"0","1"=>"1","2"=>"2","3"=>"3","4"=>"4","5"=>"5");
+		 $queryp="SELECT * FROM publicaciones;";
+		$resp=mysqli_query($con,$queryp);
+		$filap=mysqli_fetch_assoc($resp);
+		$pubmas=0;
+		$cuenta=0;
+		while($filap)
+		{	
+			$cuenta=$cuenta+1;
+			$filap=mysqli_fetch_assoc($resp);
+		}
+		for($printpub=$cuenta;$printpub>=1;$printpub--){
+			$queryp="SELECT * FROM publicaciones WHERE id_publicacion=".$printpub.";";
+			$resp=mysqli_query($con,$queryp);
+			$filap=mysqli_fetch_assoc($resp);
+			$pubus=$filap["id_usuario"];
+			$pubus=str_replace(array_keys($us2),array_values($us2),$pubus);
+			echo "<div style='border:solid;'>".$pubus."---";
+			echo $filap["fecha_publicacion"]."<br/></div>";
+			$carpu=$filap["text_publicacion"];
+			$carpu=utf8_decode($carpu);
+			echo "<div>
+				<div style='background-color:gold;'>".$carpu."<br/><br/></div>
+				</div>";
+				$queryc="SELECT * FROM comentarios;";
+			$resc=mysqli_query($con,$queryc);
+			$filac=mysqli_fetch_assoc($resc);
+			while($filac)
+			{
+				if($filap["id_publicacion"]==$filac['id_publicacion'])
+				{
+					$pubus=$filac["id_usuario"];
+					$pubus=str_replace(array_keys($us2),array_values($us2),$pubus);
+					echo "<div style='background-color:#8c8c8c;'>".$pubus."(".$filac['tiempo_comentario'].")<br/></div>";
+					$carpu=$filac["texto_comentario"];
+					$carpu=utf8_decode($carpu);
+					echo "<div style='background-color:#bfbfbf;'>".$carpu."<br/></div>";
+					$filac=mysqli_fetch_assoc($resc);
+				}	
+				else
 
+					$filac=mysqli_fetch_assoc($resc);
+			}
+			echo "<div id='infousuco".$filap["id_publicacion"]."' style='background-color:#8c8c8c;'></div>
+				<div id='comentario".$filap["id_publicacion"]."' style='background-color:#bfbfbf;'></div><center>
+				<a class='waves-effect waves-green white btn-large  green-text '><i class='material-icons right green-text '>sentiment_very_satisfied</i>ME GUSTA</a>
+            	<a class='waves-effect waves-yellow btn-large white orange-text '><i class='material-icons right orange-text'>sentiment_neutral</i>ME DA IGUAL</a>
+				<a class='waves-effect waves-red btn-large white red-text '><i class='material-icons right red-text'>sentiment_very_dissatisfied </i>ME DESAGRADA</a>
+				<a class='waves-effect waves-light btn-large red white-text '><i class='material-icons left white-text'>warning</i>Reportar Publicación</a>
+				</center>
+				<input type='text' name='come' id='come".$filap["id_publicacion"]."' placeholder='ENP'>
+				<input type='submit' value='Comentar' id='botco".$filap["id_publicacion"]."' class='dormir btn waves-effect waves-light blue darken-4'><br/><br/>";
+				if($pubmas<$filap["id_publicacion"])
+					$pubmas=$filap["id_publicacion"];
+				$filap=mysqli_fetch_assoc($resp);
+				$x=1;
+				$usp='Osvaldo';
+		}
+		
+		?>
      </div>
-     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+     </div>
+     </div>
+     </div>
+     </div>
+     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
      <!--Footer-->
      <footer class="page-footer #283593 indigo darken-3">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h6 style="color:white;">CAPOANavalNetwork</h6>
               </div>
             </div>
           </div>
@@ -132,5 +217,6 @@
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="../resources/materialize/js/materialize.min.js"></script>
      <script type="text/javascript" src="../programs/principalUsu.js"></script>
+	 <script type="text/javascript" src="../programs/publica.js"></script>
    </body>
  </html>

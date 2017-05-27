@@ -50,7 +50,7 @@ $("#formu").on("submit",function(){
               $("#body").hide();
               $("#animacion").show();
               setInterval(function(){
-                window.location.href = "../templates/principalUsu.html";
+                window.location.href = "../programs/principalUsua.php";
               },3000);
           }
           //$("#validacion").html(resp);
