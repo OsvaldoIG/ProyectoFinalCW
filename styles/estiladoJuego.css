@@ -25,7 +25,6 @@ caption
 	color:#9696A1;
 	border-color: black;
 	font-family:AR DESTINE;
-	-webkit-text-stroke: 1px black;
 	background-color:#101565;
 }
 .mar
@@ -61,7 +60,6 @@ caption
 	font-family:AR DESTINE;
 	float:left;
 	color:white;
-	-webkit-text-stroke: 1px black;
 	background-image: url("../resources/images/radar.jpg");
 	background-size: cover;
 	background-position:center;
