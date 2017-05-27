@@ -4,131 +4,284 @@
 			<title>Juego</title>
 			<meta charset='utf-8'>
 			<link rel='stylesheet'type='text/css'href='../styles/estiladoJuego.css'/>
+			<!--Import Google Icon Font-->
+			<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+			<!--Import materialize.css-->
+			<link type="text/css" rel="stylesheet" href="../resources/materialize/css/materialize.min.css"  media="screen,projection"/>
+			<!--Let browser know website is optimized for mobile-->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		</head>
 		<body>
-			<table border='2'>
-				<tr>
-					<td class='mar'>00</td>
-					<td class='mar'>01</td>
-					<td class='mar'>02</td>
-					<td class='mar'>03</td>
-					<td class='mar'>04</td>
-					<td class='mar'>05</td>
-					<td class='mar'>06</td>
-					<td class='mar'>07</td>
-					<td class='mar'>08</td>
-					<td class='mar'>09</td>
-				</tr>
-				<tr>
-					<td class='mar'>10</td>
-					<td class='mar'>11</td>
-					<td class='mar'>12</td>
-					<td class='mar'>13</td>
-					<td class='mar'>14</td>
-					<td class='mar'>15</td>
-					<td class='mar'>16</td>
-					<td class='mar'>17</td>
-					<td class='mar'>18</td>
-					<td class='mar'>19</td>
-				</tr>
-				<tr>
-					<td class='mar'>20</td>
-					<td class='mar'>21</td>
-					<td class='mar'>22</td>
-					<td class='mar'>23</td>
-					<td class='mar'>24</td>
-					<td class='mar'>25</td>
-					<td class='mar'>26</td>
-					<td class='mar'>27</td>
-					<td class='mar'>28</td>
-					<td class='mar'>29</td>
-				</tr>
-				<tr>
-					<td class='mar'>30</td>
-					<td class='mar'>31</td>
-					<td class='mar'>32</td>
-					<td class='mar'>33</td>
-					<td class='mar'>34</td>
-					<td class='mar'>35</td>
-					<td class='mar'>36</td>
-					<td class='mar'>37</td>
-					<td class='mar'>38</td>
-					<td class='mar'>39</td>
-				</tr>
-				<tr>
-					<td class='mar'>40</td>
-					<td class='mar'>41</td>
-					<td class='mar'>42</td>
-					<td class='mar'>43</td>
-					<td class='mar'>44</td>
-					<td class='mar'>45</td>
-					<td class='mar'>46</td>
-					<td class='mar'>47</td>
-					<td class='mar'>48</td>
-					<td class='mar'>49</td>
-				</tr>
-				<tr>
-					<td class='mar'>50</td>
-					<td class='mar'>51</td>
-					<td class='mar'>52</td>
-					<td class='mar'>53</td>
-					<td class='mar'>54</td>
-					<td class='mar'>55</td>
-					<td class='mar'>56</td>
-					<td class='mar'>57</td>
-					<td class='mar'>58</td>
-					<td class='mar'>59</td>
-				</tr>
-				<tr>
-					<td class='mar'>60</td>
-					<td class='mar'>61</td>
-					<td class='mar'>62</td>
-					<td class='mar'>63</td>
-					<td class='mar'>64</td>
-					<td class='mar'>65</td>
-					<td class='mar'>66</td>
-					<td class='mar'>67</td>
-					<td class='mar'>68</td>
-					<td class='mar'>69</td>
-				</tr>
-				<tr>
-					<td class='mar'>70</td>
-					<td class='mar'>71</td>
-					<td class='mar'>72</td>
-					<td class='mar'>73</td>
-					<td class='mar'>74</td>
-					<td class='mar'>75</td>
-					<td class='mar'>76</td>
-					<td class='mar'>77</td>
-					<td class='mar'>78</td>
-					<td class='mar'>79</td>
-				</tr>
-				<tr>
-					<td class='mar'>80</td>
-					<td class='mar'>81</td>
-					<td class='mar'>82</td>
-					<td class='mar'>83</td>
-					<td class='mar'>84</td>
-					<td class='mar'>85</td>
-					<td class='mar'>86</td>
-					<td class='mar'>87</td>
-					<td class='mar'>88</td>
-					<td class='mar'>89</td>
-				</tr>
-				<tr>
-					<td class='mar'>90</td>
-					<td class='mar'>91</td>
-					<td class='mar'>92</td>
-					<td class='mar'>93</td>
-					<td class='mar'>94</td>
-					<td class='mar'>95</td>
-					<td class='mar'>96</td>
-					<td class='mar'>97</td>
-					<td class='mar'>98</td>
-					<td class='mar'>99</td>
-				</tr>
-			</table>
+			<div class="right">
+                <a style="color:white;" href="perfil.html">Regresar a Perfil</a>
+			</div>
+			<center><h1>Batalla Naval</h1></center>
+			<div class='container'><div class='row'>
+				<div class='col s3 m3 l2' id='left'>
+					Instrucciones:
+					<ul>
+						<li>°Ingresa el tamaño del barco (solo podras ingresar uno pequeño, dos medianos, uno grande y un extra grande</li><br/>
+						<li>°Selecciona la direccion en la cual se colocara tu barco (en caso de colocarlo en una casilla en la cual salga del area de juego marcara error)</li><br/>
+						<li>°Confirma las posiciones de tus barcos</li><br/>
+						<li>°En el area de mapa del enemigo selecciona la casilla que quieras atacar</li><br/>
+						<li>°El juego terminara cuando un jugador destruya todas las naves del contrincante</li>
+					</ul>
+				</div>
+				<div class='col s9 m9 l10'>
+					<center><table><caption><center>Selecciona la posicion de tus barcos</center></caption>
+						<tr>
+							<td class='mar'>00</td>
+							<td class='mar'>01</td>
+							<td class='mar'>02</td>
+							<td class='mar'>03</td>
+							<td class='mar'>04</td>
+							<td class='mar'>05</td>
+							<td class='mar'>06</td>
+							<td class='mar'>07</td>
+							<td class='mar'>08</td>
+							<td class='mar'>09</td>
+						</tr>
+						<tr>
+							<td class='mar'>10</td>
+							<td class='mar'>11</td>
+							<td class='mar'>12</td>
+							<td class='mar'>13</td>
+							<td class='mar'>14</td>
+							<td class='mar'>15</td>
+							<td class='mar'>16</td>
+							<td class='mar'>17</td>
+							<td class='mar'>18</td>
+							<td class='mar'>19</td>
+						</tr>
+						<tr>
+							<td class='mar'>20</td>
+							<td class='mar'>21</td>
+							<td class='mar'>22</td>
+							<td class='mar'>23</td>
+							<td class='mar'>24</td>
+							<td class='mar'>25</td>
+							<td class='mar'>26</td>
+							<td class='mar'>27</td>
+							<td class='mar'>28</td>
+							<td class='mar'>29</td>
+						</tr>
+						<tr>
+							<td class='mar'>30</td>
+							<td class='mar'>31</td>
+							<td class='mar'>32</td>
+							<td class='mar'>33</td>
+							<td class='mar'>34</td>
+							<td class='mar'>35</td>
+							<td class='mar'>36</td>
+							<td class='mar'>37</td>
+							<td class='mar'>38</td>
+							<td class='mar'>39</td>
+						</tr>
+						<tr>
+							<td class='mar'>40</td>
+							<td class='mar'>41</td>
+							<td class='mar'>42</td>
+							<td class='mar'>43</td>
+							<td class='mar'>44</td>
+							<td class='mar'>45</td>
+							<td class='mar'>46</td>
+							<td class='mar'>47</td>
+							<td class='mar'>48</td>
+							<td class='mar'>49</td>
+						</tr>
+						<tr>
+							<td class='mar'>50</td>
+							<td class='mar'>51</td>
+							<td class='mar'>52</td>
+							<td class='mar'>53</td>
+							<td class='mar'>54</td>
+							<td class='mar'>55</td>
+							<td class='mar'>56</td>
+							<td class='mar'>57</td>
+							<td class='mar'>58</td>
+							<td class='mar'>59</td>
+						</tr>
+						<tr>
+							<td class='mar'>60</td>
+							<td class='mar'>61</td>
+							<td class='mar'>62</td>
+							<td class='mar'>63</td>
+							<td class='mar'>64</td>
+							<td class='mar'>65</td>
+							<td class='mar'>66</td>
+							<td class='mar'>67</td>
+							<td class='mar'>68</td>
+							<td class='mar'>69</td>
+						</tr>
+						<tr>
+							<td class='mar'>70</td>
+							<td class='mar'>71</td>
+							<td class='mar'>72</td>
+							<td class='mar'>73</td>
+							<td class='mar'>74</td>
+							<td class='mar'>75</td>
+							<td class='mar'>76</td>
+							<td class='mar'>77</td>
+							<td class='mar'>78</td>
+							<td class='mar'>79</td>
+						</tr>
+						<tr>
+							<td class='mar'>80</td>
+							<td class='mar'>81</td>
+							<td class='mar'>82</td>
+							<td class='mar'>83</td>
+							<td class='mar'>84</td>
+							<td class='mar'>85</td>
+							<td class='mar'>86</td>
+							<td class='mar'>87</td>
+							<td class='mar'>88</td>
+							<td class='mar'>89</td>
+						</tr>
+						<tr>
+							<td class='mar'>90</td>
+							<td class='mar'>91</td>
+							<td class='mar'>92</td>
+							<td class='mar'>93</td>
+							<td class='mar'>94</td>
+							<td class='mar'>95</td>
+							<td class='mar'>96</td>
+							<td class='mar'>97</td>
+							<td class='mar'>98</td>
+							<td class='mar'>99</td>
+						</tr>
+					</table></center>
+					<span>Selecciona el boton una sola vez</span>
+					<button id='mediano' class='aunno'>Mediano</button></td>
+					<button id='mediano2' class='aunno'>Mediano</button>
+					<button id='grande' class='aunno'>Grande</button>
+					<button id='xgrande' class='aunno'>Extra grande</button>
+				</div>
+				<div class='col s12 m12 l12'>
+					<center><table><caption><center>SELECCIONA EL ATAQUE</center></caption>
+						<tr>
+							<td class='tablero'>00</td>
+							<td class='tablero'>01</td>
+							<td class='tablero'>02</td>
+							<td class='tablero'>03</td>
+							<td class='tablero'>04</td>
+							<td class='tablero'>05</td>
+							<td class='tablero'>06</td>
+							<td class='tablero'>07</td>
+							<td class='tablero'>08</td>
+							<td class='tablero'>09</td>
+						</tr>
+						<tr>
+							<td class='tablero'>10</td>
+							<td class='tablero'>11</td>
+							<td class='tablero'>12</td>
+							<td class='tablero'>13</td>
+							<td class='tablero'>14</td>
+							<td class='tablero'>15</td>
+							<td class='tablero'>16</td>
+							<td class='tablero'>17</td>
+							<td class='tablero'>18</td>
+							<td class='tablero'>19</td>
+						</tr>
+						<tr>
+							<td class='tablero'>20</td>
+							<td class='tablero'>21</td>
+							<td class='tablero'>22</td>
+							<td class='tablero'>23</td>
+							<td class='tablero'>24</td>
+							<td class='tablero'>25</td>
+							<td class='tablero'>26</td>
+							<td class='tablero'>27</td>
+							<td class='tablero'>28</td>
+							<td class='tablero'>29</td>
+						</tr>
+						<tr>
+							<td class='tablero'>30</td>
+							<td class='tablero'>31</td>
+							<td class='tablero'>32</td>
+							<td class='tablero'>33</td>
+							<td class='tablero'>34</td>
+							<td class='tablero'>35</td>
+							<td class='tablero'>36</td>
+							<td class='tablero'>37</td>
+							<td class='tablero'>38</td>
+							<td class='tablero'>39</td>
+						</tr>
+						<tr>
+							<td class='tablero'>40</td>
+							<td class='tablero'>41</td>
+							<td class='tablero'>42</td>
+							<td class='tablero'>43</td>
+							<td class='tablero'>44</td>
+							<td class='tablero'>45</td>
+							<td class='tablero'>46</td>
+							<td class='tablero'>47</td>
+							<td class='tablero'>48</td>
+							<td class='tablero'>49</td>
+						</tr>
+						<tr>
+							<td class='tablero'>50</td>
+							<td class='tablero'>51</td>
+							<td class='tablero'>52</td>
+							<td class='tablero'>53</td>
+							<td class='tablero'>54</td>
+							<td class='tablero'>55</td>
+							<td class='tablero'>56</td>
+							<td class='tablero'>57</td>
+							<td class='tablero'>58</td>
+							<td class='tablero'>59</td>
+						</tr>
+						<tr>
+							<td class='tablero'>60</td>
+							<td class='tablero'>61</td>
+							<td class='tablero'>62</td>
+							<td class='tablero'>63</td>
+							<td class='tablero'>64</td>
+							<td class='tablero'>65</td>
+							<td class='tablero'>66</td>
+							<td class='tablero'>67</td>
+							<td class='tablero'>68</td>
+							<td class='tablero'>69</td>
+						</tr>
+						<tr>
+							<td class='tablero'>70</td>
+							<td class='tablero'>71</td>
+							<td class='tablero'>72</td>
+							<td class='tablero'>73</td>
+							<td class='tablero'>74</td>
+							<td class='tablero'>75</td>
+							<td class='tablero'>76</td>
+							<td class='tablero'>77</td>
+							<td class='tablero'>78</td>
+							<td class='tablero'>79</td>
+						</tr>
+						<tr>
+							<td class='tablero'>80</td>
+							<td class='tablero'>81</td>
+							<td class='tablero'>82</td>
+							<td class='tablero'>83</td>
+							<td class='tablero'>84</td>
+							<td class='tablero'>85</td>
+							<td class='tablero'>86</td>
+							<td class='tablero'>87</td>
+							<td class='tablero'>88</td>
+							<td class='tablero'>89</td>
+						</tr>
+						<tr>
+							<td class='tablero'>90</td>
+							<td class='tablero'>91</td>
+							<td class='tablero'>92</td>
+							<td class='tablero'>93</td>
+							<td class='tablero'>94</td>
+							<td class='tablero'>95</td>
+							<td class='tablero'>96</td>
+							<td class='tablero'>97</td>
+							<td class='tablero'>98</td>
+							<td class='tablero'>99</td>
+						</tr>
+					</table></center>
+				</div>
+			</div></div>
 	    	<script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-			<script type='text/javascript' src='../programs/juego.js'></script>
+			<!--script type='text/javascript' src='../programs/juego.js'></script-->
 		</body>
 	</html>
