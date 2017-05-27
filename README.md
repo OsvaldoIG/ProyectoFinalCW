@@ -2,6 +2,7 @@
 Videojuego Social
 
                                                          CAPOANavalNetwork®
+                                                        
                                                          
 Integrantes:
 + Hernández Juárez Carlos
@@ -10,6 +11,7 @@ Integrantes:
 + López Ortega Arleth
 + Zárate García Jorge Adrian
 
+___________________________________________________________________________________________________________________________________
   
 1) Activar en XAMPP apache y mysql  
 2) Es necesario descargar el repositorio a su computadora.
@@ -27,9 +29,11 @@ Integrantes:
 14) SOURCE xampp/mysql/bin/juegosocial.sql;
 15) Está listo para utilizar la red  :D
 
+____________________________________________________________________________________________________________________________________
 
 Para ingresar como Usuario:
                                                localhost/ProyectoFinalCW/templates/PInicioUsu.html
+                                               
 
 Para ingresar a la zona de administración:
                                                 localhost/ProyectoCW/templates/IngresoAdmin.html
