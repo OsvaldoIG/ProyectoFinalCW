@@ -11,7 +11,7 @@
   <body>
     <nav>
        <div class="nav-wrapper #283593 indigo darken-3">
-         <a href="PrincipalUsu.php" class="brand-logo">
+         <a href="../programs/principalUsua.php" class="brand-logo">
            <center>
              <div>
                <svg width='65' height='65' xmlns='http://www.w3,org/2000/svg' version='1.1' fill='white'>
@@ -55,7 +55,7 @@
            <li class="active"><i class="material-icons right">person_pin</i></li>
            <li class="active"><a id="usuario" href="perfil.html"></a></li>
            <li><a href="juego.html">Juego<i class="material-icons right">games</i></a></li>
-           <li><a id="cerrar" href="sesionUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
+           <li><a id="cerrar" href="cerrarUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
          </ul>
        </div>
     </nav>
