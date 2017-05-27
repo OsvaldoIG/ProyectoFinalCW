@@ -54,7 +54,7 @@
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li class="active"><i class="material-icons right">person_pin</i></li>
            <li class="active"><a id="usuario" href="perfil.html"></a></li>
-           <li><a href="badges.html">Juego<i class="material-icons right">games</i></a></li>
+           <li><a href="juego.html">Juego<i class="material-icons right">games</i></a></li>
            <li><a id="cerrar" href="sesionUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
          </ul>
        </div>
@@ -205,6 +205,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
+                <h6 style="color:white;">CAPOANavalNetwork</h6>
               </div>
             </div>
           </div>

@@ -60,7 +60,7 @@
            <li class="active"><a id="usuario" href="perfil.html"></a></li>
            <li><a href="badges.html">Juego<i class="material-icons right">games</i></a></li>
            <li><a href="ranking.php">Ranking<i class="material-icons right">grade</i></a></li>
-           <li><a id="cerrar" href="sesionUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
+           <li><a id="cerrar" href="cerrarUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
          </ul>
        </div>
      </nav>
@@ -81,59 +81,27 @@
        <ul class="slides">
          <li>
            <img src="../resources/images/barco3.jpg">
-           <div class="caption center-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco1.jpg">
-           <div class="caption left-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco2.jpg">
-           <div class="caption right-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco4.jpg">
-           <div class="caption center-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco5.jpg">
-           <div class="caption center-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco6.jpg">
-           <div class="caption center-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco7.jpg">
-           <div class="caption center-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
          <li>
            <img src="../resources/images/barco8.jpg">
-           <div class="caption center-align">
-             <h3></h3>
-             <h5 class="light grey-text text-lighten-3"></h5>
-           </div>
          </li>
        </ul>
      </div>
@@ -163,7 +131,7 @@
 				                     $us2=array_merge($us2,$us);
 				                     $fila=mysqli_fetch_assoc($res);
 		                   }
-		                   echo "<p style='font:150% sans-serif'>Subir Publicación</p> <input type='text' name='publi' id='publi' placeholder='COYOTES' >
+		                   echo "<p style='font:150% sans-serif'>Subir Publicación</p> <input type='text' name='publi' id='publi' placeholder='CAPOA' >
 	                     <button id='botpu' class=' dormir btn waves-effect waves-light btn_large blue darken-4' type='submit' name='pub'>PUBLICAR<i class='material-icons left'>mode_edit</i></button><br/><br/>
 				               <div id=infousu></div>
 				               <div id=publicaciones style='background-color:gold;'><div class='public'></div></div><br/><br/><br/><br/><br/>";
@@ -237,6 +205,7 @@
     <div class="container">
         <div class="row">
           <div class="col l6 s12">
+            <h6 style="color:white;">CAPOANavalNetwork</h6>
           </div>
         </div>
     </div>
