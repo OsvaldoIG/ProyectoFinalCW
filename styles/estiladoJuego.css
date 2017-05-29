@@ -49,8 +49,9 @@ caption
 }
 .right
 {
-	float:left;
-	background-color:indigo;
+	color:white;
+	float:right;
+	background-color:#101565;
 }
 #left
 {
