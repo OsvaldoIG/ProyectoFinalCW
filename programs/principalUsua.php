@@ -127,11 +127,7 @@
 			<div class='col s12 m12 l12 xl12>
 			<a name='inicio'></a>
 			</html>";
-	 $con=mysqli_connect("localhost","root","","jsocial");
-	$query="SELECT * FROM publicaciones;";
-		$res=mysqli_query($con,$query);
-		$fila=mysqli_fetch_assoc($res);
-		$id=0;
+		$con=mysqli_connect("localhost","root","","jsocial");
 		$queryp="SELECT * FROM publicaciones;";
 		$resp=mysqli_query($con,$queryp);
 		$filap=mysqli_fetch_assoc($resp);
@@ -154,25 +150,6 @@
 			echo "<div>
 				<div style='background-color:gold;'>".$carpu."<br/><br/></div>
 				</div>";
-				$queryc="SELECT * FROM comentarios;";
-			$resc=mysqli_query($con,$queryc);
-			$filac=mysqli_fetch_assoc($resc);
-			while($filac)
-			{
-				if($filap["id_publicacion"]==$filac['id_publicacion'])
-				{
-					$pubus=$filac["id_usuario"];
-					$pubus=str_replace(array_keys($us2),array_values($us2),$pubus);
-					echo "<div style='background-color:#8c8c8c;'>".$pubus."(".$filac['tiempo_comentario'].")<br/></div>";
-					$carpu=$filac["texto_comentario"];
-					$carpu=utf8_decode($carpu);
-					echo "<div style='background-color:#bfbfbf;'>".$carpu."<br/></div>";
-					$filac=mysqli_fetch_assoc($resc);
-				}
-				else
-
-					$filac=mysqli_fetch_assoc($resc);
-			}
 			echo "<div id='infousuco".$filap["id_publicacion"]."' style='background-color:#8c8c8c;'></div>
 				<div id='comentario".$filap["id_publicacion"]."' style='background-color:#bfbfbf;'></div><center>
 				<a class='waves-effect waves-green white btn-large  green-text '><i class='material-icons right green-text '>sentiment_very_satisfied</i>ME GUSTA</a>
@@ -185,6 +162,7 @@
 				if($pubmas<$filap["id_publicacion"])
 					$pubmas=$filap["id_publicacion"];
 		}
+
 		?>
      </div>
      </div>
@@ -211,6 +189,5 @@
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="../resources/materialize/js/materialize.min.js"></script>
      <script type="text/javascript" src="../programs/principalUsu.js"></script>
-	 <script type="text/javascript" src="../programs/publica.js"></script>
    </body>
  </html>
