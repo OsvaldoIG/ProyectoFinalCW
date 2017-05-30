@@ -30,5 +30,6 @@ $conn=mysqli_connect('localhost','root','','jsocial');
 		$insert="INSERT INTO juego(bar_ret5) VALUES ('".$x."');";
 		$res= mysqli_query($conn,$insert);
 	}
-
+$shot = $_POST['shot'];
+echo $shot;
 ?>

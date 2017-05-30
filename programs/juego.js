@@ -1,7 +1,7 @@
 function colocarBC (){
 		//BARCO CHICO-2
 		do			
-			var posicion = prompt("Ingresa el numero de la direccion de tu barco chico","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
+			var posicion = prompt("Ingresa el numero de la direccion de tu barco chico, despues selecciona la casilla donde se colocara","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
 		while (posicion != 1 && posicion != 2 && posicion != 3 && posicion != 4);
 		switch(posicion)
 		{
@@ -134,7 +134,7 @@ function colocarBM (){
 	//BARCO MEDIANO-3
 
 	do			
-		var posicion = prompt("Ingresa el numero de la direccion de tu barco chico","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
+		var posicion = prompt("Ingresa el numero de la direccion de tu barco mediano, despues selecciona la casilla donde se colocara","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
 	while (posicion != 1 && posicion != 2 && posicion != 3 && posicion != 4);
 	switch(posicion)
 	{
@@ -276,7 +276,7 @@ function colocarBM2 (){
 	//BARCO MEDIANO-3
 
 	do			
-		var posicion = prompt("Ingresa el numero de la direccion de tu barco chico","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
+		var posicion = prompt("Ingresa el numero de la direccion de tu segundo barco mediano, despues selecciona la casilla donde se colocara","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
 	while (posicion != 1 && posicion != 2 && posicion != 3 && posicion != 4);
 	switch(posicion)
 	{
@@ -418,7 +418,7 @@ function colocarBG () {
 	//BARCO GRANDE-4
 	
 	do			
-		var posicion = prompt("Ingresa el numero de la direccion de tu barco chico","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
+		var posicion = prompt("Ingresa el numero de la direccion de tu barco grande, despues selecciona la casilla donde se colocara","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
 	while (posicion != 1 && posicion != 2 && posicion != 3 && posicion != 4);
 	switch(posicion)
 	{
@@ -568,7 +568,7 @@ function colocarBXG (){
 	//BARCO EXTRA GRANDE-5
 	
 	do			
-		var posicion = prompt("Ingresa el numero de la direccion de tu barco chico","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
+		var posicion = prompt("Ingresa el numero de la direccion de tu barco extragrande, despues selecciona la casilla donde se colocara","1: DERECHA   2:IZQUIERDA   3:ABAJO   4:ARRIBA")
 	while (posicion != 1 && posicion != 2 && posicion != 3 && posicion != 4);
 	switch(posicion)
 	{
@@ -732,7 +732,7 @@ function colocarBXG (){
 	});
 	$('#grande').on('click',function(){
 		colocarBG();
-		$(this).removeClass().addClass('ya')
+		$(this).removeClass().addClass('ya');
 		$('#grande').off('click');
 	});
 	$('#xgrande').on('click',function(){
@@ -742,3 +742,18 @@ function colocarBXG (){
 	});
 
 colocarBC();
+$('.tablero').on('click',function(){
+	var shot = $(this).html();
+	$.ajax({
+		url: "../programs/juego.php",
+		type: "POST",
+		data: {
+			shot
+		},
+		success: function(result){
+			console.log("Se mando el ataque");		
+			$("#yo").html("disparo en "+result)
+		}
+	});
+	$(this).html("<center><img src='../resources/images/shot.jpg' height='45' width='45'></center>");
+});
