@@ -1,4 +1,8 @@
 <?php
+session_start();
+date_default_timezone_set("America/Mexico_City");
+$idd=$_SESSION['usu'][0][1];
+$nom=$_SESSION['usu'][1][1];
 $pubs=$_POST['publi'];
 $con=mysqli_connect('localhost','root','','jsocial');
   if($con)
@@ -13,7 +17,7 @@ $con=mysqli_connect('localhost','root','','jsocial');
 	  $fecha= getdate();
 	  $anio= $fecha[year];
 	  $mes= $fecha[mon];
-	  $dia= $fecha[mday]-1;
+	  $dia= $fecha[mday];
 	  $h= $fecha[hours];
 	  $min= $fecha[minutes];
 	  $s= $fecha[seconds];
@@ -26,9 +30,9 @@ $con=mysqli_connect('localhost','root','','jsocial');
 	else 
 		$m=$min;
 	if($hor!=2)
-		$ho="0".$h+5;
+		$ho="0".$h;
 	else 
-		$ho=$h+5;
+		$ho=$h;
 	if($se!=2)
 		$sec="0".$s;
 	else 
@@ -38,9 +42,9 @@ $con=mysqli_connect('localhost','root','','jsocial');
 	else 
 		$mess=$mes;
 	  $fech=$anio."-".$mess."-".$dia." ".$ho.":".$m.":".$sec;
-	  print_r($fecha);
-	 echo $fech;
-	 $insertar="INSERT INTO publicaciones(id_usuario, id_publicacion, text_publicacion, fecha_publicacion) VALUES ('0000000001','".$n."','".$pubs."','".$fech."');";
-	  $resultado= mysqli_query($con,$insertar);  
-	echo "<meta http-equiv='refresh' content='0; ../templates/principalUsu.php'>";
+	 $insertar="INSERT INTO publicaciones(id_usuario, nombre, id_publicacion, text_publicacion, fecha_publicacion) VALUES ('000000000".$idd."','".$nom."','".$n."','".$pubs."','".$fech."');";
+	  $resultado= mysqli_query($con,$insertar);
+		if($resultado==FALSE)
+			echo "Error";
+echo "<meta http-equiv='refresh' content='0; principalUsua.php'>";
 ?>

@@ -951,6 +951,7 @@ DROP TABLE IF EXISTS `publicaciones`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publicaciones` (
   `id_usuario` int(10) DEFAULT NULL,
+  `nombre` varchar(15) DEFAULT NULL,
   `id_publicacion` varchar(15) NOT NULL,
   `text_publicacion` varchar(500) DEFAULT NULL,
   `fecha_publicacion` datetime DEFAULT NULL,

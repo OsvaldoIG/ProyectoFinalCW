@@ -121,8 +121,7 @@
         </div>
 	</form>
 	<br/>
-
-			<?php
+	<?php
 	  echo"<div class='container'>
 			<div class='row'>
 			<div class='col s12 m12 l12 xl12>
@@ -133,8 +132,7 @@
 		$res=mysqli_query($con,$query);
 		$fila=mysqli_fetch_assoc($res);
 		$id=0;
-		$us2=array("0"=>"0","1"=>"1","2"=>"2","3"=>"3","4"=>"4","5"=>"5");
-		 $queryp="SELECT * FROM publicaciones;";
+		$queryp="SELECT * FROM publicaciones;";
 		$resp=mysqli_query($con,$queryp);
 		$filap=mysqli_fetch_assoc($resp);
 		$pubmas=0;
@@ -148,8 +146,7 @@
 			$queryp="SELECT * FROM publicaciones WHERE id_publicacion=".$printpub.";";
 			$resp=mysqli_query($con,$queryp);
 			$filap=mysqli_fetch_assoc($resp);
-			$pubus=$filap["id_usuario"];
-			$pubus=str_replace(array_keys($us2),array_values($us2),$pubus);
+			$pubus=$filap["nombre"];
 			echo "<div style='border:solid;'>".$pubus."---";
 			echo $filap["fecha_publicacion"]."<br/></div>";
 			$carpu=$filap["text_publicacion"];
@@ -187,11 +184,7 @@
 				<input type='submit' value='Comentar' id='botco".$filap["id_publicacion"]."' class='dormir btn waves-effect waves-light blue darken-4'><br/><br/>";
 				if($pubmas<$filap["id_publicacion"])
 					$pubmas=$filap["id_publicacion"];
-				$filap=mysqli_fetch_assoc($resp);
-				$x=1;
-				$usp='Osvaldo';
 		}
-
 		?>
      </div>
      </div>
