@@ -110,17 +110,15 @@
      </div>
      <!--Publicaciones-->
      <div class="container">
-	 <div class="row">
-       <form id="formpu" action="../programs/pub.php" method="post">
-		<p style='font:150% sans-serif'>Subir Publicación</p>
-		<input type='text' name='publi' id='public' placeholder='Publica'/>
-		<div align="center">
-          <button class="btn waves-effect waves-light #283593 indigo darken-3" type="submit" name="action">Publicar
-            <i class="material-icons right">send</i>
-          </button>
-        </div>
-	</form>
-	<br/>
+	      <div class="row">
+          <form id="formpu" action="../programs/pub.php" method="post">
+		         <p style='font:150% sans-serif'>Subir Publicación</p>
+		         <input type='text' name='publi' id='public' placeholder='Publica'/>
+		         <div align="center">
+               <button class="btn waves-effect waves-light #283593 indigo darken-3" type="submit" name="action">Publicar<i class="material-icons right">send</i></button>
+             </div>
+	        </form>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	<?php
 	  echo"<div class='container'>
 			<div class='row'>
@@ -158,18 +156,17 @@
 				<a class='waves-effect waves-light btn-large red white-text' href='../templates/reportes.html'><i class='material-icons left white-text'>warning</i>Reportar Publicación</a>
 				</center>
 				<input type='text' name='come' id='come".$filap["id_publicacion"]."' placeholder='ENP'>
-				<input type='submit' value='Comentar' id='botco".$filap["id_publicacion"]."' class='dormir btn waves-effect waves-light blue darken-4'><br/><br/>";
+				<input type='submit' value='Comentar' id='botco".$filap["id_publicacion"]."' class='dormir btn waves-effect waves-light blue darken-4'><br/><br/><br/><br/><br/>";
 				if($pubmas<$filap["id_publicacion"])
 					$pubmas=$filap["id_publicacion"];
 		}
-
 		?>
      </div>
      </div>
      </div>
      </div>
      </div>
-     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+     <br/><br/><br/><br/><br/><br/><br/>
      <!--Footer-->
      <footer class="page-footer #283593 indigo darken-3">
           <div class="container">
