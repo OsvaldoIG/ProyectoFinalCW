@@ -2,7 +2,7 @@
  <html>
    <head>
      <meta charset="UTF-8"/>
-     <title>Página principal</title>
+     <title>Perfil de Usuario</title>
      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link type="text/css" rel="stylesheet" href="../resources/materialize/css/materialize.min.css"  media="screen,projection"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,7 +11,7 @@
      <!--Barra de navegación-->
      <nav>
        <div class="nav-wrapper #283593 indigo darken-3">
-         <a href="principalUsua.php" class="brand-logo">
+         <a href="../programs/principalUsua.php" class="brand-logo">
            <center>
              <div>
                <svg width='65' height='65' xmlns='http://www.w3,org/2000/svg' version='1.1' fill='white'>
@@ -65,43 +65,35 @@
        <div class="nav-wrapper #1565c0 blue darken-3">
          <form>
            <div class="input-field">
-             <input id="search" type="search" class="autocomplete">
+             <input id="search" type="search" required>
              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
              <i class="material-icons">close</i>
            </div>
          </form>
        </div>
      </nav>
-     <!--Slider-->
-     <div class="slider">
-       <ul class="slides">
-         <li>
-           <img src="../resources/images/barco3.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco1.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco2.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco4.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco5.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco6.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco7.jpg">
-         </li>
-         <li>
-           <img src="../resources/images/barco8.jpg">
-         </li>
-       </ul>
-     </div>
      <br/><br/>
+     <!--Foto del usuario-->
+     <div class="row  #1b5e20 green darken-4">
+       <div class="col s4 offset-s1 center">
+         <img class="materialboxed" width="250" height="250" src="../resources/images/usuario.jpg">
+       </div>
+       <div class="col s3 offset-6">
+            <h4 style="color:skyblue;">Usuario:</h4>
+            <h5 style="color:white;">ID de Usuario:</h5>
+            <h5 style="color:white;">Nombre:</h5>
+            <h5 style="color:white;">Correo Electrónico:</h5>
+            <h5 style="color:white;">Fecha de nacimiento:</h5>
+       </div>
+       <div class="col s3 offset-9">
+            <h4 id="usu" style="color:skyblue;"></h4>
+            <h5 id="id_usu" style="color:white;"></h5>
+            <h5 id="nom" style="color:white;"></h5>
+            <h5 id="correo" style="color:white;"></h5>
+            <h5 id="fnac" style="color:white;"></h5>
+       </div>
+     </div>
+     <br/><br/><br/>
      <!--Mensaje Publicaciones-->
      <div class="row">
        <div class="col s6 #283593 indigo darken-3 center">
@@ -120,7 +112,7 @@
 	        </form>
 	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	<?php
-	  echo"<div class='container'>
+      echo"<div class='container'>
 			<div class='row'>
 			<div class='col s12 m12 l12 xl12'>
 			<a name='inicio'></a>
@@ -185,6 +177,6 @@
      <!--Scripts-->
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script type="text/javascript" src="../resources/materialize/js/materialize.min.js"></script>
-     <script type="text/javascript" src="../programs/principalUsu.js"></script>
+     <script type="text/javascript" src="../programs/perfilUsu.js"></script>
    </body>
  </html>
