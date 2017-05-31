@@ -62,9 +62,8 @@
     <div class="container">
 	<br/><br/>
         <div class="row">
-            <div class="col s4 m4 l4 xl4"><button class="waves-effect waves-light btn"  onclick="openRan('RankingUU')">Ranking vs Usuarios</button></div>
-            <div class="col s4 m4 l4 xl4"><button class="waves-effect waves-light btn"  onclick="openRan('Partidas')">Batallas Maximas</button></div>
-            <div class="col s4 m4 l4 xl4"><button class="waves-effect waves-light btn"  onclick="openRan('RankingUC')">Ranking vs Comp</button></div>
+            <div class="col s6 m6 l6 xl6"><button class="waves-effect waves-light btn"  onclick="openRan('Partidas')">Batallas Maximas</button></div>
+            <div class="col s6 m6 l6 xl6"><button class="waves-effect waves-light btn"  onclick="openRan('RankingUC')">Ranking vs Comp</button></div>
         </div>
       <div class="row light-blue darken-1">
           <div class="col s12 m12 l12">
