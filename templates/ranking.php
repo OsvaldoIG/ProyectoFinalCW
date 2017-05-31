@@ -124,7 +124,7 @@
               		{
               			for($x=0;$x<=9;$x++)
               			{
-              				if($fila['partidas_max']>=$g[$x])
+              				if($fila['partida_max']>=$g[$x])
               				{
               					for($w=9;$w>=$x+1;$w--)
               					{
@@ -132,7 +132,7 @@
               						$usuario[$w]=$usuario[$w-1];
               					}
               						$usuario[$x]=$fila['id_usuario'];
-              						$g[$x]=$fila['partidas_max'];
+              						$g[$x]=$fila['partida_max'];
               						$x=9;
               				}
               			}
