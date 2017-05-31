@@ -54,6 +54,7 @@
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li class="active"><i class="material-icons right">person_pin</i></li>
            <li class="active"><a id="usuario" href="../programs/perfil.php"></a></li>
+           <li><a href="../programs/autocom.php">Buscar otros usuarios<i class="material-icons right">search</i></a></li>
            <li><a href="juego.html">Juego<i class="material-icons right">games</i></a></li>
            <li><a id="cerrar" href="cerrarUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
          </ul>
