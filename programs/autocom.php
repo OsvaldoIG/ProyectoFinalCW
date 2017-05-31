@@ -2,9 +2,10 @@
  <html>
    <head>
      <meta charset="UTF-8"/>
-     <title>Perfil de Usuario</title>
+     <title>Búsqueda de Usuarios</title>
      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link type="text/css" rel="stylesheet" href="../resources/materialize/css/materialize.min.css"  media="screen,projection"/>
+		 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    </head>
    <body>
@@ -53,17 +54,28 @@
          </a>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li class="active"><i class="material-icons right">person_pin</i></li>
-           <li class="active"><a id="usuario" href="perfil.php"></a></li>
-           <li><a href="autocom.php">Buscar otros usuarios<i class="material-icons right">search</i></a></li>
+           <li class="active"><a id="usuario" href="../programs/perfil.php"></a></li>
            <li><a href="../templates/juego.html">Juego<i class="material-icons right">games</i></a></li>
            <li><a href="../templates/ranking.php">Ranking<i class="material-icons right">grade</i></a></li>
-           <li><a id="cerrar" href="../templates/cerrarUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
          </ul>
        </div>
      </nav>
      <br/><br/><br/><br/>
-     <!--Foto del usuario-->
-     <div class="row  #1b5e20 green darken-4">
+		 <!--Busqueda-->
+		 <div class="row">
+			 	<div class="col s6 offset-s3">
+				 <form id="formu">
+			 	   <p><label>NOMBRE DE USUARIO: </label><input type='text' id="bus" name='usu' value='' class="auto"/></p>
+					 <center>
+						 <button id="bususu" class="btn waves-effect waves-light #283593 indigo darken-3" type="submit">Buscar
+	    		 			<i class="material-icons right">search</i>
+	  				 </button>
+					 </center>
+			 	 </form>
+			 </div>
+	   </div>
+		 <br/><br/><br/><br/><br/>
+		 <div class="row  #1b5e20 green darken-4">
        <div class="col s4 offset-s1 center">
          <img class="materialboxed" width="250" height="250" src="../resources/images/usuario.jpg">
        </div>
@@ -75,79 +87,14 @@
             <h5 style="color:white;">Fecha de nacimiento:</h5>
        </div>
        <div class="col s3 offset-9">
-            <h4 id="usu" style="color:skyblue;"></h4>
-            <h5 id="id_usu" style="color:white;"></h5>
-            <h5 id="nom" style="color:white;"></h5>
-            <h5 id="correo" style="color:white;"></h5>
-            <h5 id="fnac" style="color:white;"></h5>
+            <h4 id="usubus" style="color:skyblue;"></h4>
+            <h5 id="idbus" style="color:white;"></h5>
+            <h5 id="nombus" style="color:white;"></h5>
+            <h5 id="corbus" style="color:white;"></h5>
+            <h5 id="nacbus" style="color:white;"></h5>
        </div>
-     </div>
-     <br/><br/><br/>
-     <!--Mensaje Publicaciones-->
-     <div class="row">
-       <div class="col s6 #283593 indigo darken-3 center">
-         <h5 style="color:white;"><i class="material-icons">info_outline</i> Publicaciones</h5>
-       </div>
-     </div>
-     <!--Publicaciones-->
-     <div class="container">
-	      <div class="row">
-          <form id="formpu" action="../programs/pub.php" method="post">
-		         <p style='font:150% sans-serif'>Subir Publicación</p>
-		         <input type='text' name='publi' id='public' placeholder='Publica'/>
-		         <div align="center">
-               <button class="btn waves-effect waves-light #283593 indigo darken-3" type="submit" name="action">Publicar<i class="material-icons right">send</i></button>
-             </div>
-	        </form>
-	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
-	<?php
-      echo"<div class='container'>
-			<div class='row'>
-			<div class='col s12 m12 l12 xl12'>
-			<a name='inicio'></a>
-			</html>";
-		$con=mysqli_connect("localhost","root","","jsocial");
-		$queryp="SELECT * FROM publicaciones;";
-		$resp=mysqli_query($con,$queryp);
-		$filap=mysqli_fetch_assoc($resp);
-		$pubmas=0;
-		$cuenta=0;
-		while($filap)
-		{
-			$cuenta=$cuenta+1;
-			$filap=mysqli_fetch_assoc($resp);
-		}
-		for($printpub=$cuenta;$printpub>=1;$printpub--){
-			$queryp="SELECT * FROM publicaciones WHERE id_publicacion=".$printpub.";";
-			$resp=mysqli_query($con,$queryp);
-			$filap=mysqli_fetch_assoc($resp);
-			$pubus=$filap["nombre"];
-			echo "<div style='border:solid;'>".$pubus."---";
-			echo $filap["fecha_publicacion"]."<br/></div>";
-			$carpu=$filap["text_publicacion"];
-			$carpu=utf8_decode($carpu);
-			echo "<div>
-				<div style='background-color:gold;'>".$carpu."<br/><br/></div>
-				</div>";
-			echo "<div id='infousuco".$filap["id_publicacion"]."' style='background-color:#8c8c8c;'></div>
-				<div id='comentario".$filap["id_publicacion"]."' style='background-color:#bfbfbf;'></div><center>
-				<a class='waves-effect waves-green white btn-large  green-text '><i class='material-icons right green-text '>sentiment_very_satisfied</i>ME GUSTA</a>
-            	<a class='waves-effect waves-yellow btn-large white orange-text '><i class='material-icons right orange-text'>sentiment_neutral</i>ME DA IGUAL</a>
-				<a class='waves-effect waves-red btn-large white red-text '><i class='material-icons right red-text'>sentiment_very_dissatisfied </i>ME DESAGRADA</a>
-				<a class='waves-effect waves-light btn-large red white-text' href='../templates/reportes.html'><i class='material-icons left white-text'>warning</i>Reportar Publicación</a>
-				</center>
-				<input type='text' name='come' id='come".$filap["id_publicacion"]."' placeholder='ENP'>
-				<input type='submit' value='Comentar' id='botco".$filap["id_publicacion"]."' class='dormir btn waves-effect waves-light blue darken-4'><br/><br/><br/><br/><br/>";
-				if($pubmas<$filap["id_publicacion"])
-					$pubmas=$filap["id_publicacion"];
-		}
-		?>
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
-     <br/><br/><br/><br/><br/><br/><br/>
+		 </div>
+	 <br/><br/><br/><br/><br/><br/>
      <!--Footer-->
      <footer class="page-footer #283593 indigo darken-3">
           <div class="container">
@@ -164,8 +111,18 @@
           </div>
         </footer>
      <!--Scripts-->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script type="text/javascript" src="../resources/materialize/js/materialize.min.js"></script>
-     <script type="text/javascript" src="../programs/perfilUsu.js"></script>
+		 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	 	 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+	 	 <script type="text/javascript">
+	 	 	$(function() {
+
+	 	 	//autocomplete
+	 	 	$(".auto").autocomplete({
+	 	 		source: "bus.php",
+	 	 		minLength: 1
+	 	 	});
+	 	 });
+	 	 </script>
+		 <script type="text/javascript" src="../programs/busqueda.js"></script>
    </body>
  </html>

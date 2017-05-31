@@ -54,22 +54,11 @@
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li class="active"><i class="material-icons right">person_pin</i></li>
            <li class="active"><a id="usuario" href="perfil.php"></a></li>
+           <li><a href="autocom.php">Buscar otros usuarios<i class="material-icons right">search</i></a></li>
            <li><a href="../templates/juego.html">Juego<i class="material-icons right">games</i></a></li>
            <li><a href="../templates/ranking.php">Ranking<i class="material-icons right">grade</i></a></li>
            <li><a id="cerrar" href="../templates/cerrarUsu.html">Cerrar sesión<i class="material-icons right">input</i></a></li>
          </ul>
-       </div>
-     </nav>
-     <!--Barra de búsqueda-->
-     <nav>
-       <div class="nav-wrapper #1565c0 blue darken-3">
-         <form>
-           <div class="input-field">
-             <input id="search" type="search" class="autocomplete">
-             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-             <i class="material-icons">close</i>
-           </div>
-         </form>
        </div>
      </nav>
      <!--Slider-->
